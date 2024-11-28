@@ -36,7 +36,7 @@ li {
 
 body {
     font-family: 'Funnel Sans';
-    background-color: #f5f5f5;
+    background-color: white;
 
     header {
         width: 100%;
@@ -46,6 +46,9 @@ body {
         align-items: center;
 
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -317,39 +320,129 @@ body {
             }
 
         }
+    }
 
-        main{
+    main {
+        width: 100%;
+        padding: 0rem 5rem;
+        translate: 0% 40%;
+        /* background: #0d0c22; */
+
+        article.grid-hero {
+            display: grid;
             width: 100%;
-            article.grid-hero{
-                width: 90%;
-                height: 40vh;
-                grid-template-columns: 25% 25% 25% 25%;
-                grid-template-rows: 1fr 1fr;
+            height: 60vh;
+            padding: 1rem 0rem;
+            grid-template-columns: 50% 25% 25%;
+            grid-template-rows: 1fr 1fr;
+            /* gap: 1rem; */
+            /* background: #0d0c22; */
 
-                .box1{
-                    /* background: url('../img/femme-portable.jpg'); */
-                    background-color: black;
-                    grid-row: span 2;
-                    grid-column: 1 span;
-                }
-
-                .box2{
-                    background: url('../img/femme-portable.jpg');
-                }
-
-                .box3{
-                    background: url('../img/femme-appareil-photo.jpg');
-                }
-
-                .box4{
-                    background: url('../img/femme-tablette.jpg');
-                }
-
-                .box5{
-                    background: url('../img/femme-montre.jpg');
-                }
-                
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #f5f5f5;
+                text-transform: uppercase;
+                grid-row: 1;
+                grid-column: 1;
             }
+
+            h3 {
+                color: #FFDE00;
+                font-weight: 900;
+                background-color: rgba(31, 31, 31, 0.5);
+                padding: .5rem 1rem;
+                border-radius: 1rem;
+            }
+
+            button {
+                background-color: #FFDE00;
+                color: #0d0c22;
+                padding: .5rem 1rem;
+                border-radius: 1rem;
+                font-size: 1rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background-color: #ffbb00;
+                }
+            }
+
+            .box1,
+            .box2,
+            .box3,
+            .box4,
+            .box5 {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 1rem;
+                color: #f5f5f5;
+                font-size: 1.5rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                border-radius: .5rem;
+                gap: .5rem;
+                margin: .3rem;
+                transition: all .2s ease-in-out;
+            }
+
+            .box1 {
+                background: url('../img/femme-tablette2.jpg');
+                background-repeat: no-repeat;
+                background-size: 130%;
+                background-position: 0% 0%;
+                grid-row: span 2;
+                grid-column: span 1;
+            }
+
+            .box2 {
+                background: url('../img/ordiportable2.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: -50% 50%;
+                grid-row: 1;
+                grid-column: 2;
+            }
+
+            .box3 {
+                background: url('../img/femme-appareil-photo5.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 100% 50%;
+                grid-row: 1;
+                grid-column: 3;
+            }
+
+            .box4 {
+                background: url('../img/femme-montre.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 100% 50%;
+                grid-row: 2;
+                grid-column: 2;
+            }
+
+            .box5 {
+                background: url('../img/femme-ecouteur-gris.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 100% 50%;
+                grid-row: 2;
+                grid-column: 3;
+            }
+
+        }
+
+        section.totalSection {
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5;
         }
     }
 }
