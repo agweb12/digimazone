@@ -324,7 +324,7 @@ body {
 
     main {
         width: 100%;
-        translate: 0% 40%;
+        translate: 0% 20%;
         /* background: #0d0c22; */
 
         article.grid-hero {
@@ -510,6 +510,161 @@ body {
                 .box-banner5 {
                     grid-row: 1;
                     grid-column: 5;
+                }
+            }
+
+            .banner-categories{
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                margin: 5rem auto;
+                padding: 2rem 1rem;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 0px 0px 12px #12121246;
+
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 800;
+                    color: #0d0c22;
+                    text-transform: capitalize;
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+
+                p.offer {
+                    font-size: .8rem;
+                    font-weight: 300;
+                    color: #999;
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                img{
+                    width: 100%;
+                    grid-row: span 2;
+                    /* grid-column: 1; */
+                    border-radius: 5px;
+                }
+
+                .box-categorie,
+                .box-categorie2,
+                .box-categorie3,
+                .box-categorie4,
+                .box-categorie5,
+                .box-categorie6,
+                .box-categorie7,
+                .box-categorie8,
+                .box-categorie9,
+                .box-categorie10{
+                    display: grid;
+                    grid-template-columns: 75% 25%;
+                    grid-template-rows: 1fr 1fr;
+                    align-items: center;
+                    padding: 2rem 1rem;
+                    border: 1px solid #99999937;
+                    border-radius: 5px;
+                    margin: .1rem;
+                    box-shadow: inset 0px 0px 0px #99999937;
+                    transition: all .3s ease-in-out;
+                }
+                .box-categorie{
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+                .box-categorie2{
+                    grid-row: 1;
+                    grid-column: 2;
+                }
+                .box-categorie3{
+                    grid-row: 1;
+                    grid-column: 3;
+                }
+                .box-categorie4{
+                    grid-row: 1;
+                    grid-column: 4;
+                }
+                .box-categorie5{
+                    grid-row: 1;
+                    grid-column: 5;
+                }
+                .box-categorie6{
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+                .box-categorie7{
+                    grid-row: 2;
+                    grid-column: 2;
+                }
+                .box-categorie8{
+                    grid-row: 2;
+                    grid-column: 3;
+                }
+                .box-categorie9{
+                    grid-row: 2;
+                    grid-column: 4;
+                }
+                .box-categorie10{
+                    grid-row: 2;
+                    grid-column: 5;
+                }
+            }
+
+            .featured-collection{
+                width: 100%;
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                h2{
+                    font-size: 2rem;
+                    font-weight: 800;
+                    color: #0d0c22;
+                }
+
+                .carousel-featured-collection{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    overflow: hidden;
+
+                    .box-featured-col{
+                        width: 20%;
+                        height: 20vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+
+                        .box-description-col{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+
+                            h5{
+                                color: red;
+                                font-size: .7rem;
+                            }
+
+                            h4{
+                                color: #0d0c22;
+                                font-size: 1rem;
+
+                            }
+                        }
+                    }
                 }
             }
         }
