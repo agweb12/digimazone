@@ -40,6 +40,7 @@ body {
 
     header {
         width: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -237,6 +238,7 @@ body {
 
             .menuCache {
                 width: 100%;
+                height: 0px;
                 display: flex;
                 opacity: 0;
                 flex-direction: row;
@@ -314,6 +316,7 @@ body {
 
             .menuCache.is-visible {
                 opacity: 1;
+                height: fit-content;
                 visibility: visible;
                 transform: translateY(0%);
                 transition: all .3s ease-in-out;
@@ -398,7 +401,7 @@ body {
                 background-size: 130%;
                 background-position: 0% 0%;
                 grid-row: span 2;
-                grid-column: span 1;
+                grid-column:  1;
             }
 
             .box2 {
@@ -866,7 +869,6 @@ body {
                 border-radius: .5rem;
                 background-color: #f5f5f5;
                 padding: .3rem;
-                pointer-events: none;
 
                 input {
                     width: 80%;
