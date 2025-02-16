@@ -10,12 +10,35 @@
 :root {
     color-scheme: light dark;
     --primarycolor: light-dark(#333, #f5f5f5);
+    --secondarycolor: light-dark(#f5f5f5, #f5f5f5);
+    --titlecolor: light-dark(#0d0c22, #FFDE00);
+    --backgroundcolor: light-dark(#f5f5f5, #0d0c22);
+}
+
+h1,
+h2 {
+    color: var(--titlecolor);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0rem 0rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 800;
 }
 
 h3 {
     font-weight: 300;
     text-transform: uppercase;
     font-size: 1rem;
+    color: var(--secondarycolor);
 }
 
 p {
@@ -25,18 +48,31 @@ p {
     font-weight: 500;
 }
 
+p.subTitle {
+    color: var(--primarycolor);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: var(--primarycolor);
 }
 
+a.navigation {
+    color: var(--secondarycolor)
+}
+
 li {
     list-style: none;
+    color: var(--secondarycolor);
 }
 
 body {
     font-family: 'Funnel Sans';
-    background-color: white;
+    background-color: var(--backgroundcolor);
 
     header {
         width: 100%;
@@ -65,13 +101,14 @@ body {
                 justify-content: space-between;
                 padding: .3rem 7rem;
                 align-items: center;
-                background-color: light-dark(#161616, #0d0c22);
+                background-color: light-dark(#0d0c22, #161616);
                 border-bottom: 1px solid #333;
                 z-index: 20;
 
 
                 p {
                     font-size: .9rem;
+                    color: var(--secondarycolor);
                 }
 
                 li {
@@ -97,7 +134,7 @@ body {
                         select {
                             background-color: transparent;
                             border: none;
-                            color: var(--primarycolor);
+                            color: var(--secondarycolor);
                             font-size: .9rem;
                             font-weight: 100;
 
@@ -118,7 +155,7 @@ body {
                 justify-content: space-between;
                 padding: .3rem 7rem;
                 align-items: center;
-                background-color: light-dark(#161616, #0d0c22);
+                background-color: light-dark(#0d0c22, #161616);
                 border-bottom: 1px solid #333;
                 z-index: 20;
 
@@ -147,9 +184,11 @@ body {
                         justify-content: center;
                         align-items: center;
                         gap: .5rem;
+                        color: var(--secondarycolor);
 
                         i {
                             font-size: 1.3rem;
+                            color: var(--secondarycolor);
                         }
                     }
 
@@ -178,7 +217,7 @@ body {
                 justify-content: flex-start;
                 align-items: center;
                 padding: .3rem 7rem;
-                background-color: light-dark(#4b4b4b, #2c279a);
+                background-color: light-dark(#2c279a, #2c279a);
                 gap: 2rem;
                 z-index: 20;
 
@@ -190,12 +229,12 @@ body {
                     align-items: center;
                     gap: 9rem;
                     cursor: pointer;
-                    border-right: 1px solid light-dark(#333, #f5f5f5);
+                    border-right: 1px solid light-dark(#f5f5f5, #f5f5f5);
                     padding: 0rem 1rem;
                     transition: all .2s ease-in-out;
 
                     &:hover {
-                        background-color: light-dark(#666666, #3730c1);
+                        background-color: light-dark(#3730c1, #3730c1);
                     }
 
                     .box {
@@ -341,6 +380,7 @@ body {
             /* gap: 1rem; */
             /* background: #0d0c22; */
 
+
             h2 {
                 font-size: 2rem;
                 font-weight: 800;
@@ -393,6 +433,10 @@ body {
                 gap: .5rem;
                 margin: .3rem;
                 transition: all .2s ease-in-out;
+
+                p {
+                    color: var(--secondarycolor);
+                }
             }
 
             .box1 {
@@ -445,7 +489,7 @@ body {
         section.totalSection {
             width: 100%;
             height: 100%;
-            background: #f5f5f5;
+            background-color: var(--backgroundcolor);
             padding: 0rem 5rem;
 
             .banner-grid-services {
@@ -453,11 +497,14 @@ body {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: 1fr;
-                margin: 0 auto;
+                margin: 5rem auto;
+                border-radius: .5rem;
+                border-bottom: 3px solid var(--primarycolor);
+                border-right: 3px solid var(--primarycolor);
 
                 i {
                     font-size: 2rem;
-                    color: #0d0c22;
+                    color: var(--primarycolor);
                     grid-row: 2 span;
                     grid-column: 1;
                 }
@@ -465,7 +512,7 @@ body {
                 h3 {
                     font-size: 1rem;
                     font-weight: 800;
-                    color: #0d0c22;
+                    color: var(--primarycolor);
                     text-transform: capitalize;
                     grid-row: 1;
                     grid-column: 2;
@@ -634,13 +681,6 @@ body {
                 align-items: flex-start;
                 gap: 3rem;
                 padding: 2rem 0rem;
-
-                h2 {
-                    font-size: 1.8rem;
-                    font-weight: 800;
-                    color: #0d0c22;
-                    text-transform: capitalize;
-                }
 
                 .carousel-featured-collection {
                     width: 100%;

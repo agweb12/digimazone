@@ -3,7 +3,7 @@
     <filter id="Tracé_1" x="0" y="31.525" width="179.91" height="25.668" filterUnits="userSpaceOnUse">
       <feOffset dx="5" dy="4" input="SourceAlpha"/>
       <feGaussianBlur result="blur"/>
-      <feFlood flood-color="#fff"/>
+      <feFlood flood-color="#0d0c22"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
@@ -17,7 +17,7 @@
     </filter>
   </defs>
   <g id="Groupe_1" data-name="Groupe 1" transform="translate(-70.433 -27)">
-    <text id="DigiMaZone" transform="translate(87 56)" fill="#f6f6f6" font-size="27" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">DigiMa</tspan><tspan y="0" fill="#ffde00">Zone</tspan></text>
+    <text id="DigiMaZone" transform="translate(87 56)" fill="#0d0c22" font-size="27" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">DigiMa</tspan><tspan y="0" fill="#ffde00">Zone</tspan></text>
     <g data-type="innerShadowGroup">
       <g transform="matrix(1, 0, 0, 1, 70.43, 27)" filter="url(#Tracé_1)">
         <path id="Tracé_1-3" data-name="Tracé 1" d="M70.433,60.371s35.325,20.848,112.616,19.783,60.824-21.629,60.824-21.629H201.309s14.838,13.55-22.874,13.718S70.433,60.371,70.433,60.371Z" transform="translate(-70.43 -27)" fill="#ffde00"/>
