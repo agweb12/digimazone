@@ -160,7 +160,7 @@ body {
                 z-index: 20;
 
                 input[type="search"] {
-                    background-color: white;
+                    background-color: #fff;
                     color: #333;
                     border-radius: .2rem;
                     padding: .55rem;
@@ -571,7 +571,7 @@ body {
                 grid-template-rows: 1fr 1fr;
                 margin: 5rem auto;
                 padding: 2rem 1rem;
-                background-color: white;
+                background-color: #fff;
                 border-radius: 20px;
                 box-shadow: 0px 0px 12px #12121246;
 
@@ -700,7 +700,7 @@ body {
                         flex-direction: column;
                         justify-content: flex-start;
                         align-items: center;
-                        background-color: white;
+                        background-color: #fff;
                         border-radius: .5rem;
                         box-shadow: 0px 0px 7px #12121246;
 
