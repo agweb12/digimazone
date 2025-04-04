@@ -98,7 +98,7 @@ CREATE TABLE commandes(
     id_utilisateur INT NOT NULL,
     id_panier INT NOT NULL,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_panier) REFERENCES paniers(id) ON DELETE CASCADE
+    -- FOREIGN KEY (id_panier) REFERENCES paniers(id) ON DELETE CASCADE
 );
 
 -- Table details_commandes : la table details_commandes permet de gérer les détails de chaque commande
@@ -116,22 +116,22 @@ CREATE TABLE details_commandes(
     FOREIGN KEY (id_produit) REFERENCES produits(id) ON DELETE CASCADE
 );
 
--- Table paniers : la table paniers permet de gérer les paniers d'achats des utilisateurs
-CREATE TABLE paniers(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_utilisateur INT NOT NULL,
-    FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id) ON DELETE CASCADE
-);
+-- -- Table paniers : la table paniers permet de gérer les paniers d'achats des utilisateurs
+-- CREATE TABLE paniers(
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     id_utilisateur INT NOT NULL,
+--     FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id) ON DELETE CASCADE
+-- );
 
--- Table paniers_produits : la table paniers_produits permet de gérer les produits ajoutés au panier
-CREATE TABLE paniers_produits(
-    id_panier INT NOT NULL,
-    id_produit INT NOT NULL,
-    quantite INT NOT NULL,
-    PRIMARY KEY (id_panier, id_produit),
-    FOREIGN KEY (id_panier) REFERENCES paniers(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_produit) REFERENCES produits(id) ON DELETE CASCADE
-);
+-- -- Table paniers_produits : la table paniers_produits permet de gérer les produits ajoutés au panier
+-- CREATE TABLE paniers_produits(
+--     id_panier INT NOT NULL,
+--     id_produit INT NOT NULL,
+--     quantite INT NOT NULL,
+--     PRIMARY KEY (id_panier, id_produit),
+--     FOREIGN KEY (id_panier) REFERENCES paniers(id) ON DELETE CASCADE,
+--     FOREIGN KEY (id_produit) REFERENCES produits(id) ON DELETE CASCADE
+-- );
 
 CREATE TABLE paiements(
     id INT PRIMARY KEY AUTO_INCREMENT,
