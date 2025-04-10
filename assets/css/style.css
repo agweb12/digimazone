@@ -979,7 +979,7 @@ body {
                     gap: 1rem;
                     padding: 1rem 1rem;
                     overflow: hidden;
-                    border: 1px solid red;
+                    /* border: 1px solid red; */
 
 
                     .box-featured-col {

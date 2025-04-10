@@ -1,7 +1,7 @@
 <?php
 session_start();
 define("RACINE_SITE", "http://localhost/digimazone/");
-require_once("../config/config.php");
+require_once("config/config.php");
 
 #### Condition pour se déconnecter
 if (isset($_GET['action']) && $_GET['action'] === "deconnexion") {
