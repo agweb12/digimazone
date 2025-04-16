@@ -1,5 +1,8 @@
--- creation de la base de données digimazone si elle n'existe pas déjà avec l'ensemble des fonctionnalités sql qui nous permettent de n'avoir aucune erreur
--- et de ne pas avoir de problème d'insertion de données
+/*creation de la base de données digimazone 
+si elle n'existe pas déjà avec l'ensemble des fonctionnalités 
+sql qui nous permettent de n'avoir aucune erreur
+et de ne pas avoir de problème d'insertion de données
+*/
 -- Suppression de la base de données si elle existe déjà
 DROP DATABASE IF EXISTS digimazone;
 -- Création de la base de données
@@ -14,7 +17,8 @@ SET character_set_results=utf8mb4;
 SET character_set_client=utf8mb4;
 
 
--- Table adresses : la table adresses permet de gérer les adresses de livraison des utilisateurs
+-- Table adresses : la table adresses permet de gérer 
+-- les adresses de livraison des utilisateurs
 CREATE TABLE adresses(
     id INT PRIMARY KEY AUTO_INCREMENT,
     rue TEXT NOT NULL,
@@ -103,7 +107,6 @@ CREATE TABLE commandes(
 -- Table details_commandes : la table details_commandes permet de gérer les détails de chaque commande
 -- et de stocker les informations relatives à chaque produit commandé
 -- et à chaque utilisateur ayant passé la commande
--- et à chaque panier associé à la commande
 -- et à chaque produit associé à la commande
 CREATE TABLE details_commandes(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -134,28 +137,3 @@ CREATE TABLE avis(
     FOREIGN KEY (id_produit) REFERENCES produits(id) ON DELETE CASCADE,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id) ON DELETE CASCADE
 );
-
--- Comment la table panier est-elle lié à la commande ?
--- La table panier est liée à la commande par l'intermédiaire de la table details_commandes
--- qui contient les informations relatives à chaque produit commandé
--- et à chaque utilisateur ayant passé la commande
--- et à chaque panier associé à la commande
--- et à chaque produit associé à la commande
--- La table details_commandes contient une colonne id_panier qui fait référence à la table paniers
--- et une colonne id_commande qui fait référence à la table commandes
--- et une colonne id_produit qui fait référence à la table produits
--- et une colonne id_utilisateur qui fait référence à la table utilisateurs
--- et une colonne quantite qui fait référence à la table produits
--- et une colonne prix qui fait référence à la table produits
-
-/*
-Comment relier le Panier à une Commande ?
-Actuellement, il n’y a aucune relation directe entre paniers et commandes.
-L’objectif est que lorsqu'un utilisateur valide son panier, tous les produits du panier doivent être copiés dans details_commandes et associés à une nouvelle commande.
-
-Solution à appliquer :
-Ajout d’un champ id_panier dans commandes
-Cela permet de savoir quel panier a été converti en commande.
-Modification de details_commandes
-Au moment de la validation, les produits du panier sont transférés vers details_commandes.
-*/
