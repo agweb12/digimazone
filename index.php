@@ -5,7 +5,14 @@ $bootstrap = "";
 require_once('includes/header.php');
 ?>
 <h1>Bienvenue sur DigiMaZone</h1>
-<p class="subTitle">La nouvelle plateforme de vente en ligne des objets digitaux dans votre zone</p>
+<?php 
+    if (isset($_SESSION['user'])) {
+        echo '<p class="subTitle">Bonjour ' . $_SESSION['user']['prenom'] . '</p>';
+    } else {
+        echo '<p class="subTitle">La nouvelle plateforme de vente en ligne des objets digitaux dans votre zone</p>';
+    }
+?>
+
 <article class="grid-hero">
     <div class="box1">
         <h3>supercharged for pros.</h3>

@@ -50,7 +50,9 @@
             </div>
         </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="<?= RACINE_SITE ?>assets/js/script.js"></script>
+    <?= $boostrapFooter ?>
+    <?= $scriptForm ?>
 </body>
 
 </html>

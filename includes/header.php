@@ -7,7 +7,7 @@
     <title><?= $h1 ?></title>
     <meta name="description" content="La nouvelle plateforme de vente en ligne des objets digitaux dans votre zone">
     <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
-    <?= $boostrap ?>
+    <?= $boostrapHeader ?>
     <script src="https://kit.fontawesome.com/b83fa86058.js" crossorigin="anonymous"></script>
 </head>
 
@@ -36,7 +36,11 @@
                 <li>
                     <div class="accounting">
                         <a href="<?= RACINE_SITE ?>profil/favoris.php" class="list"><i class="fa-regular fa-heart"></i>Mes Produits<br>Favoris</a>
-                        <a href="<?= RACINE_SITE ?>login.php" class="list"><i class="fa-regular fa-user"></i>Se Connecter<br>À Mon Compte</a>
+                        <?php if(isset($_SESSION['user'])): ?>
+                            <a href="<?= RACINE_SITE ?>logout.php" class="list"><i class="fa-solid fa-right-from-bracket"></i>Se Déconnecter</a>
+                        <?php else: ?>
+                            <a href="<?= RACINE_SITE ?>login.php" class="list"><i class="fa-regular fa-user"></i>Se Connecter<br>À Mon Compte</a>
+                        <?php endif; ?>
                         <a href="<?= RACINE_SITE ?>boutique/cart.php" class="list panier">
                             <i class="fa-solid fa-cart-shopping" style="color: #FFDE00;"></i>
                             <div class="nbArticle">
@@ -58,8 +62,17 @@
                 <li>
                     <a href="<?= RACINE_SITE ?>" class="navigation">Accueil</a>
                     <a href="<?= RACINE_SITE ?>catalogue.php" class="navigation">Catalogue des produits</a>
-                    <a href="<?= RACINE_SITE ?>profil/orders.php" class="navigation">Mes Commandes</a>
-                    <a href="<?= RACINE_SITE ?>profil/account.php" class="navigation">Mon Compte</a>
+                    <?php if(isset($_SESSION['user'])): ?>
+                        <a href="<?= RACINE_SITE ?>profil/orders.php" class="navigation">Mes Commandes</a>
+                        <a href="<?= RACINE_SITE ?>profil/account.php" class="navigation">Mon Compte</a>
+                        <?php if($_SESSION['user']['statut'] === 'admin'): ?>
+                        <li><a href="<?= RACINE_SITE ?>admin/manageUtilisateurs.php" class="navigation">Gestion utilisateurs</a></li>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <!-- Si l'utilisateur n'est pas connecté -->
+                        <li><a href="<?= RACINE_SITE ?>login.php" class="navigation">Connexion</a></li>
+                        <li><a href="<?= RACINE_SITE ?>register.php" class="navigation">Inscription</a></li>
+                    <?php endif; ?>
                     <a href="<?= RACINE_SITE ?>contact.php" class="navigation">Contactez-Nous</a>
                 </li>
             </ul>
