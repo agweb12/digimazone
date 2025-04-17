@@ -129,11 +129,22 @@ if (isset($_GET['action']) && $_GET['action'] === 'changestatus' && isset($_GET[
 }
 require_once('../includes/header.php');
 ?>
+<h1>
+    <i class="fas fa-tachometer-alt"></i>
+    <?php echo $h1; ?>
+</h1>
+<section class="sectionSiteLinks">
+    <section class="breadcrumb">
+        <div class="box-breadcrumb">
+            <a class="crumb" href="<?= RACINE_SITE ?>admin/dashboard.php">Dashboard</a>
+            <p>/</p>
+            <p><?= $h1 ?></p>
+        </div>
+    </section>
+</section>
 
 <section class="admin-section">
-    <div class="admin-container">
-        <h2>Gestion des utilisateurs</h2>
-        
+    <div class="admin-container">        
         <?php if (!empty($message)): ?>
             <div class="alert <?= $messageType === 'success' ? 'alert-success' : 'alert-danger' ?>">
                 <p><?= $message ?></p>

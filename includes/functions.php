@@ -373,3 +373,33 @@ function getUserAddress(int $userId): array|false
     }
 }
 
+/**
+ * Met à jour l'adresse d'un utilisateur
+ * @param int $userId L'ID de l'utilisateur
+ * @param array $adresseData Les nouvelles données de l'adresse
+ * @return bool True si succès, false si erreur
+ */
+
+function updateUserAddress(int $userId, array $adresseData): bool
+{
+    try {
+        $pdo = connexionBDD();
+        
+        // Mettre à jour l'adresse
+        $sql = "UPDATE adresses SET rue = :rue, ville = :ville, codePostal = :codePostal, pays = :pays 
+                  WHERE id = (SELECT id_adresse FROM utilisateurs WHERE id = :userId)";
+        
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([
+            'rue' => $adresseData['rue'],
+            'ville' => $adresseData['ville'],
+            'codePostal' => $adresseData['codePostal'],
+            'pays' => $adresseData['pays'],
+            'userId' => $userId
+        ]);
+    } catch (PDOException $e) {
+        error_log("Erreur lors de la mise à jour de l'adresse : " . $e->getMessage());
+        return false;
+    }
+}
+

@@ -64,7 +64,7 @@
                     <a href="<?= RACINE_SITE ?>catalogue.php" class="navigation">Catalogue des produits</a>
                     <?php if(isset($_SESSION['user'])): ?>
                         <?php if($_SESSION['user']['statut'] === 'admin'): ?>
-                            <a href="<?= RACINE_SITE ?>admin/manageUtilisateurs.php" class="navigation">Gestion utilisateurs</a>
+                            <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="navigation">Dashboard Admin</a>
                         <?php elseif($_SESSION['user']['statut'] === 'client'): ?>
                             <a href="<?= RACINE_SITE ?>profil/orders.php" class="navigation">Mes Commandes</a>
                             <a href="<?= RACINE_SITE ?>profil/account.php" class="navigation">Mon Compte</a>
