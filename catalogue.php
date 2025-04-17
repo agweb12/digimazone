@@ -1,7 +1,9 @@
 <?php
 require_once('includes/functions.php');
 $h1 = "Catalogue Digimazone";
-$bootstrap = "";
+$boostrapHeader = '';
+$boostrapFooter = '';
+$scriptForm = '';
 require_once('includes/header.php');
 ?>
 <section class="sectionCatalogue">
