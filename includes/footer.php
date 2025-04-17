@@ -43,9 +43,9 @@
                 <h4>Notre Application</h4>
                 <p>Télécharger notre application !</p>
                 <div class="box-img">
-                    <img src="assets/img/logo.svg" alt="logo">
-                    <img src="./assets/img/apple.webp" alt="apple store">
-                    <img src="./assets/img/en_badge_web_generic.png" alt="playstore">
+                    <img src="<?= RACINE_SITE ?>assets/img/logo.svg" alt="logo">
+                    <img src="<?= RACINE_SITE ?>assets/img/apple-store.png" alt="apple store">
+                    <img src="<?= RACINE_SITE ?>assets/img/playstore.webp" alt="playstore">
                 </div>
             </div>
         </div>

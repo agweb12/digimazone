@@ -63,15 +63,16 @@
                     <a href="<?= RACINE_SITE ?>" class="navigation">Accueil</a>
                     <a href="<?= RACINE_SITE ?>catalogue.php" class="navigation">Catalogue des produits</a>
                     <?php if(isset($_SESSION['user'])): ?>
-                        <a href="<?= RACINE_SITE ?>profil/orders.php" class="navigation">Mes Commandes</a>
-                        <a href="<?= RACINE_SITE ?>profil/account.php" class="navigation">Mon Compte</a>
                         <?php if($_SESSION['user']['statut'] === 'admin'): ?>
-                        <li><a href="<?= RACINE_SITE ?>admin/manageUtilisateurs.php" class="navigation">Gestion utilisateurs</a></li>
+                            <a href="<?= RACINE_SITE ?>admin/manageUtilisateurs.php" class="navigation">Gestion utilisateurs</a>
+                        <?php elseif($_SESSION['user']['statut'] === 'client'): ?>
+                            <a href="<?= RACINE_SITE ?>profil/orders.php" class="navigation">Mes Commandes</a>
+                            <a href="<?= RACINE_SITE ?>profil/account.php" class="navigation">Mon Compte</a>
                         <?php endif; ?>
                     <?php else: ?>
                         <!-- Si l'utilisateur n'est pas connecté -->
-                        <li><a href="<?= RACINE_SITE ?>login.php" class="navigation">Connexion</a></li>
-                        <li><a href="<?= RACINE_SITE ?>register.php" class="navigation">Inscription</a></li>
+                        <a href="<?= RACINE_SITE ?>login.php" class="navigation">Connexion</a>
+                        <a href="<?= RACINE_SITE ?>register.php" class="navigation">Inscription</a>
                     <?php endif; ?>
                     <a href="<?= RACINE_SITE ?>contact.php" class="navigation">Contactez-Nous</a>
                 </li>

@@ -4,7 +4,6 @@ $h1 = "Inscription - Digimazone";
 $boostrapHeader = ''; 
 $boostrapFooter = '';
 $scriptForm = '<script src="'.RACINE_SITE.'assets/js/form.js"></script>';
-require_once('includes/header.php');
 
 // Initialisation des variables
 $success = false;
@@ -85,13 +84,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($userId) {
             $success = true;
             // Redirection vers la page de connexion après 3 secondes
-            header("refresh:3;url=" . RACINE_SITE . "login.php");
+            // header("Refresh:3;url=" . RACINE_SITE . "login.php");
+            // echo '<meta http-equiv="refresh" content="3;url='.RACINE_SITE.'login.php>';
+            echo '<script>setTimeout(function(){ window.location.href = "'.RACINE_SITE.'login.php"; }, 3000);</script>';
+            // exit();
         } else {
             $error = true;
             $messageErreur = "Une erreur est survenue lors de l'inscription. Veuillez réessayer.";
         }
     }
 }
+require_once('includes/header.php');
 ?>
 
 <section class="register-section">
@@ -101,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <?php if ($success): ?>
                 <div class="alert-success">
-                    <p>Votre compte a été créé avec succès ! Vous allez être redirigé vers la page de connexion...</p>
+                    <p>Votre compte a été créé avec succès ! Vous allez être redirigé vers la page de connexion dans 3 secondes...</p>
                 </div>
             <?php endif; ?>
             
@@ -168,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
 
                         <div class="form-group checkbox-group">
-                            <input type="checkbox" class="form-check-input" id="conditions" name="conditions">
+                            <input type="checkbox" id="conditions" name="conditions">
                             <label class="form-check-label" for="conditions">J'accepte les conditions générales d'utilisation *</label>
                         </div>
                         
@@ -179,8 +182,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="login-link">
                             <p>Vous avez déjà un compte ? <a href="<?= RACINE_SITE ?>login.php">Se connecter</a></p>
                         </div>
-                    </div>
-                        
                     </div>
                 </div>
             </form>
